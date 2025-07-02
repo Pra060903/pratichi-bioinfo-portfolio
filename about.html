@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Pratichi's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header, footer {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;    
+            gap: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #0077b6;
+            font-weight: 500;
+        }
+        nav ul li a:hover {
+            color: #023e8a;
+        }
+        .about-section {
+            padding: 60px 80px;
+        }
+        .about-section h2 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+        }
+        .bio {
+            margin-top: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 900px;
+        }
+        .skills, .certifications, .experience, .awards, .tools, .timeline, .quote-block {
+            margin-top: 40px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #0077b6;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::after {
+            content: '\2795';
+            margin-left: 10px;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        .section-title.active::after {
+            content: '\2796';
+        }
+        .skill-list, .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .skill, .cert {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            box-shadow: 1px 2px 6px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .cert:hover {
+            transform: scale(1.03);
+        }
+        .cert img {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 10px;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .cert.active img {
+            display: block;
+        }
+        .collapsible-content {
+            display: none;
+            margin-top: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .quote-block blockquote {
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="documents/resume.pdf" download>Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>Hello! I'm Pratichi Prakash Kadam</h2>
+        <p class="bio">
+            I'm currently pursuing a Bachelor of Science in Bioinformatics, driven by a deep interest in combining biology with technology.
+            I enjoy designing intuitive and aesthetic websites and working on projects that solve real scientific problems through code.
+            My mission is to use informatics to make biological research faster, more accurate, and more accessible.
+        </p>
+
+        <div class="skills">
+            <h3 class="section-title" onclick="toggleSection(this)">Skills</h3>
+            <div class="collapsible-content">
+                <div class="skill-list">
+                    <div class="skill">Python</div>
+                    <div class="skill">HTML & CSS</div>
+                    <div class="skill">JavaScript (Basics)</div>
+                    <div class="skill">Git & GitHub</div>
+                    <div class="skill">Protein & DNA Analysis</div>
+                    <div class="skill">Bioinformatics Tools</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tools">
+            <h3 class="section-title" onclick="toggleSection(this)">Tools I Use</h3>
+            <div class="collapsible-content">
+                <div class="skill-list">
+                    <div class="skill">VS Code</div>
+                    <div class="skill">GitHub Pages</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience">
+            <h3 class="section-title" onclick="toggleSection(this)">Experience</h3>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>Biological Website - BioSeqAnalyzer</strong> (Jan 2025 – Mar 2025)<br>Chhatrapati Shivaji Maharaj University – Developed a analyzer that can identify the diseases based on the protein sequence.</li>
+                    <li><strong>Web Designer (Freelance)</strong> (2024)<br>Created academic and e-commerce websites using HTML/CSS/JS.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="awards">
+            <h3 class="section-title" onclick="toggleSection(this)">Achievements</h3>
+            <div class="collapsible-content">
+                <ul>
+                    <li>coming soon</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h3 class="section-title" onclick="toggleSection(this)">My Journey</h3>
+            <div class="collapsible-content">
+                <ul>
+                    <li><strong>2025–2026</strong> – Final Year B.Sc. Bioinformatics</li>
+                    <li><strong>2025</strong> – Built BioSeq analyzer</li>
+                    <li><strong>2024</strong> – Started learning Web Development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="certifications">
+            <h3 class="section-title" onclick="toggleSection(this)">Certifications</h3>
+            <div class="collapsible-content">
+                <div class="cert-list">
+                    <div class="cert" onclick="toggleCert(this)">SOON<img src="certificates/python-bioinformatics.jpg" alt="Python Bioinformatics Certificate"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-block">
+            <blockquote>“Turning complex bio problems into beautiful code.”</blockquote>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Pratichi Kadam | My Portfolio
+    </footer>
+
+    <script>
+        function toggleCert(element) {
+            element.classList.toggle('active');
+        }
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+            content.style.display = isVisible ? 'none' : 'block';
+            header.classList.toggle('active', !isVisible);
+        }
+    </script>
+</body>
+</html>

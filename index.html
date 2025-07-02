@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Pratichi's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Welcome Screen */
+        #welcome-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to right, #d4f1f4, #ffe0f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+
+        .welcome-message {
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .welcome-message h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .welcome-message button {
+            padding: 12px 24px;
+            background-color: #0077b6;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .welcome-message button:hover {
+            background-color: #023e8a;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scroll animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Main Content Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #1a1a1a;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #0077b6;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #023e8a;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 80px;
+            min-height: 80vh;
+        }
+
+        .text-section {
+            max-width: 50%;
+        }
+
+        .text-section h2 {
+            font-size: 2.5rem;
+            color: #343a40;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #777;
+            margin: 10px 0 20px;
+            font-size: 1rem;
+        }
+
+        .typing {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #0077b6;
+            height: 28px;
+        }
+
+        .button-group {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-right: 10px;
+            background-color: #0077b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #023e8a;
+        }
+
+        .highlights {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .highlight-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 2px 4px 8px rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+        }
+
+        .quote {
+            margin-top: 40px;
+            font-style: italic;
+            color: #555;
+            text-align: center;
+        }
+
+        .scroll-down {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .scroll-down a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
+        .image-section {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border: 5px solid #dee2e6;
+            background: linear-gradient(135deg, #ffe0f0, #d4f1f4);
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .text-section {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .image-section {
+                margin-top: 40px;
+            }
+
+            .button-group {
+                text-align: center;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px auto;
+            }
+
+            .highlights {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Splash Screen -->
+    <div id="welcome-screen">
+        <div class="welcome-message">
+            <h1>👋 Welcome to My Portfolio</h1>
+            <button onclick="hideWelcome()">Click to Enter</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <header class="fade-in">
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="documents/resume.pdf" download>Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="fade-in">
+        <div class="text-section">
+            <h2>Hello! I'm Pratichi</h2>
+            <p class="tagline">Bioinformatics Student • Creative Web Developer • Lifelong Learner</p>
+            <p class="typing" id="typing"></p>
+
+            <div class="button-group">
+                <a href="documents/resume.pdf" download class="btn">📄 Download Resume</a>
+                <a href="projects.html" class="btn">💼 Explore Projects</a>
+                <a href="contact.html" class="btn">📬 Get in Touch</a>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight-card">🎓 B.Sc. Bioinformatics, Class of 2026</div>
+                <div class="highlight-card">🧬 Built 3+ DNA/Protein Tools</div>
+                <div class="highlight-card">💻 Skilled in Python,HTML/CSS</div>
+            </div>
+
+            <blockquote class="quote">
+                “Combining biology with code to make science more powerful, accessible, and beautiful.”
+            </blockquote>
+
+            <div class="scroll-down">
+                <a href="about.html">⬇ Scroll to About</a>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="pratichi.jpg" alt="Pratichi Kadam">
+        </div>
+    </main>
+
+    <footer class="fade-in">&copy; 2025 Pratichi Kadam | My Portfolio</footer>
+
+    <!-- Link external JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
