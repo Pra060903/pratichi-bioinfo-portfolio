@@ -1,4 +1,4 @@
-/* Global styles */
+/* === Global Styles === */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-/* Header styles */
+/* === Header === */
 header {
   background: #6200ea;
   color: #fff;
@@ -31,34 +31,50 @@ header {
 
 .nav-links a {
   text-decoration: none;
+  color: #fff;
 }
 
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* === Buttons === */
 .btn {
-  background: #fff;
-  color: #6200ea;
-  padding: 8px 16px;
-  border-radius: 25px;
-  transition: 0.3s ease;
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
   font-weight: 500;
-  border: 2px solid transparent;
+  transition: background-color 0.3s ease;
+  border: none;
 }
 
 .btn:hover {
-  background: #bb86fc;
-  color: #fff;
-  border-color: #fff;
+  background-color: #023e8a;
 }
 
-.btn.active {
+.btn-primary {
+  background: #6200ea;
+  color: #fff;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
   background: #3700b3;
-  color: #fff;
 }
 
-/* Main content */
+/* === Content Section === */
 .content {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .about-card {
@@ -86,23 +102,7 @@ header {
   color: #d500f9;
 }
 
-.btn-primary {
-  margin-top: 25px;
-  padding: 12px 24px;
-  background: #6200ea;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #3700b3;
-}
-
-/* Footer */
+/* === Footer === */
 footer {
   background: #6200ea;
   color: #fff;
@@ -113,72 +113,122 @@ footer {
   width: 100%;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    margin-right: 10px;
-    background-color: #0077b6;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #023e8a;
-}
+/* === Welcome Screen === */
 #welcome-screen {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(to right, #d4f1f4, #ffe0f0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.6s ease;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #d4f1f4, #ffe0f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
 }
 
 .welcome-message {
-    text-align: center;
-    animation: fadeIn 1.2s ease-in-out;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 .welcome-message h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .welcome-message button {
-    padding: 12px 24px;
-    background-color: #0077b6;
-    color: #fff;
-    border: none;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 12px 24px;
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .welcome-message button:hover {
-    background-color: #023e8a;
+  background-color: #023e8a;
 }
 
+/* === Animations === */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .content {
+    padding: 30px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-card {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .about-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-card p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+
+  .welcome-message h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-message button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-card p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+
+  .welcome-message h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-message button {
+    font-size: 0.85rem;
+  }
 }
