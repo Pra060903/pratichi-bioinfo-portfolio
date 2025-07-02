@@ -1,264 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home | Pratichi's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <title>Contact | Pratichi Kadam</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
 
-        header {
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
+    header {
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-            color: #1a1a1a;
-        }
+    header h1 {
+      margin: 0;
+      color: #0077b6;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
+    .contact-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #0077b6;
-            font-weight: 500;
-        }
+    .contact-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
 
-        nav ul li a:hover {
-            color: #023e8a;
-        }
+    .contact-info {
+      margin-bottom: 30px;
+    }
 
-        main {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 80px;
-            min-height: 80vh;
-        }
+    .contact-info p {
+      font-size: 1rem;
+      margin: 8px 0;
+      color: #444;
+    }
 
-        .text-section {
-            max-width: 50%;
-        }
+    .contact-info a {
+      color: #0077b6;
+      text-decoration: none;
+    }
 
-        .text-section h2 {
-            font-size: 2.5rem;
-            color: #343a40;
-        }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
 
-        .tagline {
-            font-style: italic;
-            color: #777;
-            margin: 10px 0 20px;
-            font-size: 1rem;
-        }
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      gap: 20px;
+      font-size: 1.5rem;
+    }
 
-        .typing {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #0077b6;
-            height: 28px;
-        }
+    .social-icons a {
+      color: #0077b6;
+      transition: 0.3s;
+    }
 
-        .button-group {
-            margin-top: 30px;
-        }
+    .social-icons a:hover {
+      color: #023e8a;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            margin-right: 10px;
-            background-color: #0077b6;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
 
-        .btn:hover {
-            background-color: #023e8a;
-        }
+    .contact-container button {
+      background-color: #0077b6;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
 
-        .highlights {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    .contact-container button:hover {
+      background-color: #023e8a;
+    }
 
-        .highlight-card {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            padding: 12px 20px;
-            border-radius: 10px;
-            box-shadow: 2px 4px 8px rgba(0,0,0,0.05);
-            font-size: 0.95rem;
-        }
-
-        .quote {
-            margin-top: 40px;
-            font-style: italic;
-            color: #555;
-            text-align: center;
-        }
-
-        .scroll-down {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .scroll-down a {
-            text-decoration: none;
-            font-size: 1rem;
-            color: #0077b6;
-            font-weight: bold;
-        }
-
-        .image-section {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-            border: 5px solid #dee2e6;
-            background: linear-gradient(135deg, #ffe0f0, #d4f1f4);
-        }
-
-        .image-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #ffffff;
-            color: #888;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                flex-direction: column;
-                padding: 40px 20px;
-            }
-
-            .text-section {
-                max-width: 100%;
-                text-align: center;
-            }
-
-            .image-section {
-                margin-top: 40px;
-            }
-
-            .button-group {
-                text-align: center;
-            }
-
-            .btn {
-                display: block;
-                margin: 10px auto;
-            }
-
-            .highlights {
-                justify-content: center;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="documents/resume.pdf" download>Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="text-section">
-            <h2>Hello! I'm Pratichi</h2>
-            <p class="tagline">Bioinformatics Student • Creative Web Developer • Lifelong Learner</p>
-            <p class="typing" id="typing"></p>
+  <header>
+    <h1>📬 Get in Touch</h1>
+  </header>
 
-            <div class="button-group">
-                <a href="documents/resume.pdf" download class="btn">📄 Download Resume</a>
-                <a href="projects.html" class="btn">💼 Explore Projects</a>
-                <a href="contact.html" class="btn">📬 Get in Touch</a>
-            </div>
+  <div class="contact-container">
+    <h2>I'd love to connect with you!</h2>
 
-            <div class="highlights">
-                <div class="highlight-card">🎓 B.Sc. Bioinformatics, Class of 2026</div>
-                <div class="highlight-card">🧬 Built 3+ DNA/Protein Tools</div>
-                <div class="highlight-card">💻 Skilled in Python, Flask & HTML/CSS</div>
-            </div>
+    <div class="contact-info">
+      <p><strong>📧 Email:</strong> <a href="mailto:pratichikadam2@gmail.com">pratichikadam2@gmail.com</a></p>
+      <p><strong>📱 Phone:</strong> +91 86938 97879</p>
+      <p><strong>📍 Location:</strong> Maharashtra, India</p>
 
-            <blockquote class="quote">
-                “Combining biology with code to make science more powerful, accessible, and beautiful.”
-            </blockquote>
+      <div class="social-icons">
+        <a href="https://wa.me/918693897879" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME/" target="_blank" title="Visit Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/pratichi-kadam" target="_blank" title="Visit LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/pratichi-kadam" target="_blank" title="Visit GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
 
-            <div class="scroll-down">
-                <a href="about.html">⬇ Scroll to About</a>
-            </div>
-        </div>
+    <form action="mailto:pratichikadam2@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required />
+      <input type="email" name="Email" placeholder="Your Email" required />
+      <textarea name="Message" rows="6" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
-        <div class="image-section">
-            <img src="images/pratichi.jpg" alt="Pratichi Kadam">
-        </div>
-    </main>
-    <footer>&copy; 2025 Pratichi Kadam | My Portfolio</footer>
-
-    <script>
-        const words = ["Bioinformatics Enthusiast", "Creative Developer", "Fast Learner"];
-        let i = 0;
-        let j = 0;
-        let currentWord = '';
-        let isDeleting = false;
-        const typingEl = document.getElementById('typing');
-
-        function type() {
-            if (i < words.length) {
-                if (!isDeleting && j <= words[i].length) {
-                    currentWord = words[i].substring(0, j++);
-                } else if (isDeleting && j >= 0) {
-                    currentWord = words[i].substring(0, j--);
-                }
-
-                typingEl.innerHTML = currentWord;
-
-                if (j === words[i].length) {
-                    isDeleting = true;
-                    setTimeout(type, 1000);
-                } else if (isDeleting && j === 0) {
-                    isDeleting = false;
-                    i = (i + 1) % words.length;
-                }
-
-                setTimeout(type, isDeleting ? 70 : 120);
-            }
-        }
-
-        type();
-    </script>
+  <footer>&copy; 2025 Pratichi Kadam | All Rights Reserved</footer>
 </body>
 </html>
