@@ -13,36 +13,31 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #f9f9ff;
-      color: #333;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #f2f2f2;
       transition: background 0.3s, color 0.3s;
-    }
-    body.dark-mode {
-      background: #1e1e2f;
-      color: #ddd;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #121c2b;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    body.dark-mode header {
-      background: #2a2a40;
-    }
     .logo {
       font-weight: bold;
       font-size: 1.2rem;
+      color: #f9f9f9;
     }
     .menu-icon {
       display: none;
       font-size: 1.5rem;
       cursor: pointer;
+      color: #f9f9f9;
     }
     nav ul {
       display: flex;
@@ -53,11 +48,12 @@
     }
     nav a {
       text-decoration: none;
-      color: #333;
+      color: #f9f9f9;
       font-weight: 500;
+      transition: color 0.3s;
     }
-    body.dark-mode nav a {
-      color: #eee;
+    nav a:hover {
+      color: #ffd369;
     }
     main .content {
       display: flex;
@@ -68,14 +64,15 @@
     }
     .about-card {
       max-width: 500px;
+      animation: fadeIn 1.2s ease-in-out;
     }
     .tagline {
       font-size: 1.1rem;
-      color: #666;
+      color: #c5c5c5;
     }
     .btn {
-      background: #6c63ff;
-      color: white;
+      background: #ffd369;
+      color: #121212;
       padding: 10px 16px;
       border-radius: 8px;
       text-decoration: none;
@@ -84,7 +81,7 @@
       transition: background 0.3s;
     }
     .btn:hover {
-      background: #5848e5;
+      background: #e6be50;
     }
     .button-group {
       display: flex;
@@ -93,42 +90,42 @@
       margin: 15px 0;
     }
     .highlight-card {
-      background: #e0e7ff;
+      background: rgba(255, 255, 255, 0.1);
       padding: 10px 15px;
       border-radius: 8px;
       margin: 5px 0;
+      backdrop-filter: blur(5px);
     }
     .quote {
       font-style: italic;
       margin-top: 20px;
+      color: #cccccc;
     }
     .image-section img {
       max-width: 100%;
       height: auto;
       border-radius: 12px;
-      filter: drop-shadow(0 0 10px rgba(0,0,0,0.1));
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
     .scroll-down a {
       text-decoration: none;
-      color: #6c63ff;
+      color: #ffd369;
       display: inline-block;
       margin-top: 15px;
+      font-weight: bold;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background: #f1f1f1;
+      background: #0f2027;
       font-size: 0.9rem;
-    }
-    body.dark-mode footer {
-      background: #2c2c3a;
-      color: #ccc;
+      color: #aaa;
     }
     #darkToggle {
       margin-left: 10px;
       cursor: pointer;
-      background: #6c63ff;
-      color: white;
+      background: #ffd369;
+      color: #121212;
       border: none;
       border-radius: 5px;
       padding: 5px 10px;
@@ -139,14 +136,14 @@
       }
       nav ul {
         flex-direction: column;
-        background: white;
+        background: #1a1a2e;
         position: absolute;
         right: 20px;
         top: 60px;
         padding: 10px;
         display: none;
         border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       }
       nav ul.show {
         display: flex;
@@ -166,10 +163,13 @@
         text-align: center;
       }
     }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
-  <!-- Welcome Splash Screen -->
   <div id="welcome-screen">
     <div class="welcome-message">
       <h1 class="fade-in">👋 Welcome to My Portfolio</h1>
@@ -177,8 +177,7 @@
     </div>
   </div>
 
-  <!-- Main Content -->
-  <header class="fade-in">
+  <header>
     <div class="logo">Pratichi's Portfolio</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <nav>
@@ -192,7 +191,7 @@
     <button id="darkToggle">🌓</button>
   </header>
 
-  <main class="fade-in">
+  <main>
     <div class="content">
       <div class="about-card">
         <h2>Hello! I'm Pratichi</h2>
@@ -226,7 +225,7 @@
     </div>
   </main>
 
-  <footer class="fade-in">
+  <footer>
     &copy; 2025 Pratichi Kadam | My Portfolio
   </footer>
 
