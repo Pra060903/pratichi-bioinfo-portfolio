@@ -5,13 +5,174 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Pratichi's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9ff;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background: #1e1e2f;
+      color: #ddd;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    body.dark-mode header {
+      background: #2a2a40;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    body.dark-mode nav a {
+      color: #eee;
+    }
+    main .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+    .about-card {
+      max-width: 500px;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #666;
+    }
+    .btn {
+      background: #6c63ff;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #5848e5;
+    }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    .highlight-card {
+      background: #e0e7ff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 5px 0;
+    }
+    .quote {
+      font-style: italic;
+      margin-top: 20px;
+    }
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      filter: drop-shadow(0 0 10px rgba(0,0,0,0.1));
+    }
+    .scroll-down a {
+      text-decoration: none;
+      color: #6c63ff;
+      display: inline-block;
+      margin-top: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+    }
+    body.dark-mode footer {
+      background: #2c2c3a;
+      color: #ccc;
+    }
+    #darkToggle {
+      margin-left: 10px;
+      cursor: pointer;
+      background: #6c63ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        padding: 10px;
+        display: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      nav ul.show {
+        display: flex;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-card {
+        text-align: center;
+      }
+      .image-section {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Welcome Splash Screen -->
   <div id="welcome-screen">
     <div class="welcome-message">
-      <h1>👋 Welcome to My Portfolio</h1>
+      <h1 class="fade-in">👋 Welcome to My Portfolio</h1>
       <button onclick="hideWelcome()">Click to Enter</button>
     </div>
   </div>
@@ -19,6 +180,7 @@
   <!-- Main Content -->
   <header class="fade-in">
     <div class="logo">Pratichi's Portfolio</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -27,6 +189,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button id="darkToggle">🌓</button>
   </header>
 
   <main class="fade-in">
@@ -67,6 +230,16 @@
     &copy; 2025 Pratichi Kadam | My Portfolio
   </footer>
 
-  <script src="script.js" defer></script>
+  <script>
+    function hideWelcome() {
+      document.getElementById("welcome-screen").style.display = "none";
+    }
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    }
+    document.getElementById("darkToggle").addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
 </body>
 </html>
