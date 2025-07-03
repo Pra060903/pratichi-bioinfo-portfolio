@@ -4,11 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Pratichi's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #f2f2f2;
+    }
+    header {
+      background: #121c2b;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #f9f9f9;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #ffd369;
+    }
+    .about-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      cursor: pointer;
+      margin-top: 30px;
+      color: #ffd369;
+    }
+    .collapsible-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .skill-list, .cert-list ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+    }
+    .skill, .cert {
+      background: rgba(255,255,255,0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+    }
+    .cert img {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+    .cert.active img {
+      display: block;
+    }
+    .quote-block blockquote {
+      font-style: italic;
+      margin-top: 30px;
+      color: #ccc;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f2027;
+      color: #aaa;
+      margin-top: 40px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #1a1a2e;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 10px;
+        display: none;
+      }
+      nav ul.show {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>About Me</h1>
+    <div class="logo">Pratichi's Portfolio</div>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -25,7 +136,6 @@
       I'm currently pursuing a Bachelor of Science in Bioinformatics, driven by a deep interest in combining biology with technology. I enjoy designing intuitive and aesthetic websites and working on projects that solve real scientific problems through code. My mission is to use informatics to make biological research faster, more accurate, and more accessible.
     </p>
 
-    <!-- Skills -->
     <div class="skills">
       <h3 class="section-title" onclick="toggleSection(this)">Skills</h3>
       <div class="collapsible-content">
@@ -40,7 +150,6 @@
       </div>
     </div>
 
-    <!-- Tools -->
     <div class="tools">
       <h3 class="section-title" onclick="toggleSection(this)">Tools I Use</h3>
       <div class="collapsible-content">
@@ -51,7 +160,6 @@
       </div>
     </div>
 
-    <!-- Experience -->
     <div class="experience">
       <h3 class="section-title" onclick="toggleSection(this)">Experience</h3>
       <div class="collapsible-content">
@@ -62,7 +170,6 @@
       </div>
     </div>
 
-    <!-- Journey -->
     <div class="timeline">
       <h3 class="section-title" onclick="toggleSection(this)">My Journey</h3>
       <div class="collapsible-content">
@@ -74,7 +181,6 @@
       </div>
     </div>
 
-    <!-- Certifications -->
     <div class="certifications">
       <h3 class="section-title" onclick="toggleSection(this)">Certifications</h3>
       <div class="collapsible-content">
@@ -84,7 +190,6 @@
       </div>
     </div>
 
-    <!-- Quote -->
     <div class="quote-block">
       <blockquote>“Turning complex bio problems into beautiful code.”</blockquote>
     </div>
